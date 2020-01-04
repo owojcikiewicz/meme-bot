@@ -8,6 +8,21 @@ return function(client)
     local json = require("json")
     local querystring = require("querystring")
 
+    function mbot.sendformats(message)
+        coroutine.wrap(function()
+            local url = "https://api.imgflip.com/get_memes"
+            local res, body = httpr.request("GET", url)
+            local results = json.decode(body)
+            local meme 
+
+            for _, v in pairs(results["data"]) do
+                for _, v in pairs(v) do
+                    message:reply("**"..languages[config.language]["commands"]["commandGetFormats"]["name"].."** "..v.name.."\n".."**"..languages[config.language]["commands"]["commandGetFormats"]["id"].."** "..v.id.."\n".."**"..languages[config.language]["commands"]["commandGetFormats"]["url"].."** "..v.url)
+                end
+            end
+        end)()
+    end
+
     function mbot.generatememe(message, input, textTop, textBot)
         coroutine.wrap(function()
             local url = "https://api.imgflip.com/get_memes"
