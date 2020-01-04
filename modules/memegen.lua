@@ -7,21 +7,45 @@ return function(client)
     local httpr = require("coro-http")
     local json = require("json")
     local querystring = require("querystring")
+    local timer = require("timer")
 
-    function mbot.generatememe(message, templateID, username, password, textTop, textBot)
-        local headers = {
-            template_id = templateID,
-            username = username,
-            password = password,
-            text0 = textTop,
-            text1 = textBot
-        }
+    function mbot.generatememe(message, input, username, password, textTop, textBot)
         coroutine.wrap(function()
-            local url = "https://api.imgflip.com/caption_image?template_id="..templateID.."&username="..username.."&password="..password.."&text0="..textTop.."&text1="..textBot
+            local url = "https://api.imgflip.com/get_memes"
+            local res, body = httpr.request("GET", url)
+            local results = json.decode(body)
+            local meme 
+
+            for _, v in pairs(results["data"]) do
+                for _, v in pairs(v) do
+                    if v.id == input then break end
+                    if string.lower(v.name) == input then meme = tostring(v.id) break end
+                end
+            end
+
+            message:reply(languages[config.language]["general"]["memeGenerating"])
+            local info = {  
+                username = username or nil,
+                password = password or nil,
+                text0 = textTop or nil,
+                text1 = textBot or nil,
+            }
+
+            for _, v in pairs(info) do
+                if v == nil then 
+                    message:reply(languages[config.language]["general"]["memeFail"])
+                    return 
+                end
+            end
+            if meme == nil then message:reply(languages[config.language]["general"]["memeFail"]) return end
+
+            local url = "https://api.imgflip.com/caption_image?template_id="..meme.."&username="..username.."&password="..password.."&text0="..textTop.."&text1="..textBot
             local res, body = httpr.request("POST", url, headers)
             local results = json.decode(body)
 
-            message:reply(results["data"]["url"])
+            if results["success"] == false or nil then message:reply(languages[config.language]["general"]["memeFail"]) return end
+
+            message:reply(languages[config.language]["general"]["memeSent"]..results["data"]["url"])
         end)()
     end
 end
