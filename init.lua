@@ -18,6 +18,10 @@ config.prefix = "."
 config.token = "NjYzMTAxNDQxNjk4OTU1MzEz.XhDnag.PF1i7zqN1TnHnj-diaOnFeONXKg"
 config.activity = "memowanko 👌 | "..config.prefix.."help"
 config.language = "en"
+config.login = {
+    username = "SaturdaysH_MEMEBOT",
+    password = "__memebot__"
+}
 
 -- Lua modules.
 require("./modules/util")(client)
