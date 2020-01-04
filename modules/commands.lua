@@ -14,6 +14,6 @@ return function(client)
 		--local args = content:split(" ")
 		local channel = message.channel
 
-        mbot.generatememe(message, content, "SaturdaysH_MEMEBOT", "__memebot__", "Niedzialajacy bot :(", "Dzialajacy bot ktory tworzy memy i w ogole zajebioza lol")
+        mbot.generatememe(message, content, "Niedzialajacy bot :(", "Dzialajacy bot ktory tworzy memy i w ogole zajebioza lol")
     end)
 end
