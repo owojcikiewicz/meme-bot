@@ -1,12 +1,12 @@
 return function(client)
     function mbot.splitstring(strInput, strSeperator)
         if sep == nil then
-                sep = "%s"
+            sep = "%s"
         end
 
-        local t={}
+        local t = {}
         for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-                table.insert(t, str)
+            table.insert(t, str)
         end
 
         return t
