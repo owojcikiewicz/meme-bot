@@ -7,9 +7,8 @@ return function(client)
     local httpr = require("coro-http")
     local json = require("json")
     local querystring = require("querystring")
-    local timer = require("timer")
 
-    function mbot.generatememe(message, input, username, password, textTop, textBot)
+    function mbot.generatememe(message, input, textTop, textBot)
         coroutine.wrap(function()
             local url = "https://api.imgflip.com/get_memes"
             local res, body = httpr.request("GET", url)
@@ -25,8 +24,8 @@ return function(client)
 
             message:reply(languages[config.language]["general"]["memeGenerating"])
             local info = {  
-                username = username or nil,
-                password = password or nil,
+                username = config.login["username"] or nil,
+                password = config.login["password"] or nil,
                 text0 = textTop or nil,
                 text1 = textBot or nil,
             }
@@ -37,9 +36,10 @@ return function(client)
                     return 
                 end
             end
+
             if meme == nil then message:reply(languages[config.language]["general"]["memeFail"]) return end
 
-            local url = "https://api.imgflip.com/caption_image?template_id="..meme.."&username="..username.."&password="..password.."&text0="..textTop.."&text1="..textBot
+            local url = "https://api.imgflip.com/caption_image?template_id="..meme.."&username="..info.username.."&password="..info.password.."&text0="..textTop.."&text1="..textBot
             local res, body = httpr.request("POST", url, headers)
             local results = json.decode(body)
 
