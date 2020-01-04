@@ -12,7 +12,12 @@ return function(client)
         },
         ["commands"] = {
             ["commandFormats"] = "formats",
-            ["commandGenerate"] = "generate"
+            ["commandGenerate"] = "generate",
+            ["commandGetFormats"] = {
+                ["name"] = "Name:",
+                ["id"] = "ID:",
+                ["url"] = "Preview:"
+            }
         }
     }
 
@@ -24,7 +29,12 @@ return function(client)
         },
         ["commands"] = {
             ["commandFormats"] = "szablony",
-            ["commandGenerate"] = "generuj"
+            ["commandGenerate"] = "generuj",
+            ["commandGetFormats"] = {
+                ["name"] = "Nazwa:",
+                ["id"] = "ID:",
+                ["url"] = "Podgląd:"
+            }
         }
     }
 end
