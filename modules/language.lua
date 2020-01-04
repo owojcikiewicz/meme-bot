@@ -1,9 +1,14 @@
+--[[----------------------------------------------
+
+    Discord bot developed by SaturdaysHeroes.xyz
+
+--]]----------------------------------------------
 return function(client)
     languages["en"] = {
-        ["phrase"] = "string"
+        ["commandTest"] = "Yep, I'm here!"
     }
 
     languages["pl"] = {
-        ["fraza"] = "string"
+        ["commandTest"] = "Wszystko działa z tej stronie!"
     }
 end

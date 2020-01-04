@@ -20,6 +20,7 @@ config.activity = "memowanko 👌 | "..config.prefix.."help"
 config.language = "en"
 
 -- Lua modules.
+require("./modules/util")
 require("./modules/language")(client)
 require("./modules/commands")(client)
 require("./modules/memegen")(client)
