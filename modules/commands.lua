@@ -14,9 +14,6 @@ return function(client)
 		local args = content:split(" ")
 		local channel = message.channel
 
-        -- Command: Test
-        if args[1] == config.prefix.."test" then 
-            message:reply(languages[config.laguage]["commandTest"])
-        end
+        mbot.generatememe(message, "178591752", "SaturdaysH_MEMEBOT", "__memebot__", "Niedzialajacy bot :(", "Dzialajacy bot ktory tworzy memy i w ogole zajebioza lol")
     end)
 end
