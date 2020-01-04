@@ -7,16 +7,16 @@ local discordia = require("discordia")
 local client = discordia.Client()
 _G.mbot = {}
 _G.config = {}
-_G.language = {}
+_G.languages = {}
 
 -- Additional extensions.
 local json = require("json")
 local http = require("coro-http")
 
 -- Config variables/tables.
-config.prefix = "*"
-config.token = ""
-config.activity = config.prefix.."help"
+config.prefix = "."
+config.token = "NjYzMTAxNDQxNjk4OTU1MzEz.XhDnag.PF1i7zqN1TnHnj-diaOnFeONXKg"
+config.activity = "memowanko 👌 | "..config.prefix.."help"
 config.language = "en"
 
 -- Lua modules.

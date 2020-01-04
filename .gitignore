@@ -2,3 +2,7 @@
 *.exe
 
 *.cmd
+
+gateway.json
+
+discordia.log
