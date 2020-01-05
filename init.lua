@@ -15,14 +15,14 @@ local http = require("coro-http")
 discordia.extensions()
 
 -- Config variables/tables.
-config.prefix = "."
-config.token = "NjYzMTAxNDQxNjk4OTU1MzEz.XhDnag.PF1i7zqN1TnHnj-diaOnFeONXKg"
-config.activity = "memowanko 👌 | "..config.prefix.."help"
+config.prefix = ">"
+config.token = ""
+config.activity = "mememes 👌 | "..config.prefix.."help"
 config.language = "en"
-config.seperator = ">"
+config.seperator = "-"
 config.login = {
-    username = "SaturdaysH_MEMEBOT",
-    password = "__memebot__"
+    username = "Imgflip.com_USERNAME",
+    password = "Imgflip.com_PASSWORD"
 }
 config.commands = {
     ["en"] = {
