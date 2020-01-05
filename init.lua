@@ -17,7 +17,7 @@ discordia.extensions()
 -- Config variables/tables.
 config.prefix = ">"
 config.token = ""
-config.activity = "mememes 👌 | "..config.prefix.."help"
+config.activity = "memes 👌 | "..config.prefix.."help"
 config.language = "en"
 config.seperator = "-"
 config.login = {
