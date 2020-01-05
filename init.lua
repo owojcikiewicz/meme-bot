@@ -12,6 +12,7 @@ _G.languages = {}
 -- Additional extensions.
 local json = require("json")
 local http = require("coro-http")
+discordia.extensions()
 
 -- Config variables/tables.
 config.prefix = "."
@@ -21,6 +22,16 @@ config.language = "pl"
 config.login = {
     username = "SaturdaysH_MEMEBOT",
     password = "__memebot__"
+}
+config.commands = {
+    ["en"] = {
+        ["commandFormats"] = "formats",
+        ["commandGenerate"] = "generate",
+    },
+    ["pl"] = {
+        ["commandFormats"] = "szablony",
+        ["commandGenerate"] = "generuj",
+    }
 }
 
 -- Lua modules.

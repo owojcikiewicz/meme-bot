@@ -8,7 +8,7 @@ return function(client)
     local json = require("json")
     local querystring = require("querystring")
 
-    function mbot.sendformats(message)
+    function mbot.sendformats(user)
         coroutine.wrap(function()
             local url = "https://api.imgflip.com/get_memes"
             local res, body = httpr.request("GET", url)
@@ -17,7 +17,7 @@ return function(client)
 
             for _, v in pairs(results["data"]) do
                 for _, v in pairs(v) do
-                    message:reply("**"..languages[config.language]["commands"]["commandGetFormats"]["name"].."** "..v.name.."\n".."**"..languages[config.language]["commands"]["commandGetFormats"]["id"].."** "..v.id.."\n".."**"..languages[config.language]["commands"]["commandGetFormats"]["url"].."** "..v.url)
+                    user:send("**"..languages[config.language]["commands"]["commandGetFormats"]["name"].."** "..v.name.."\n".."**"..languages[config.language]["commands"]["commandGetFormats"]["id"].."** "..v.id.."\n".."**"..languages[config.language]["commands"]["commandGetFormats"]["url"].."** "..v.url)
                 end
             end
         end)()
@@ -32,8 +32,8 @@ return function(client)
 
             for _, v in pairs(results["data"]) do
                 for _, v in pairs(v) do
-                    if v.id == input then break end
-                    if string.lower(v.name) == input then meme = tostring(v.id) break end
+                    if v.id == input then meme = tostring(v.id) break end
+                    if string.lower(v.name.." ") == input then meme = tostring(v.id) break end
                 end
             end
 
