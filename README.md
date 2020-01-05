@@ -10,4 +10,4 @@ MemeBot uses the [Discordia](https://github.com/SinisterRectus/Discordia) packag
 
 ## Credits
 - SaturdaysHeroes (Coding)
-- [SkipperBylat](https://www.reddit.com/r/ProgrammerHumor/comments/ejvasw/big_brain_time/) (Inspiration)
+- [SkipperBlyat](https://www.reddit.com/r/ProgrammerHumor/comments/ejvasw/big_brain_time/) (Inspiration)
