@@ -4,7 +4,9 @@
 
 --]]----------------------------------------------
 return function(client)
-    client:on("messageCreate", function(message)
+	local seperator = config.seperator
+	
+	    client:on("messageCreate", function(message)
         if message.guild == nil then return end 
 		if message.author.bot == true then return end
 
@@ -12,11 +14,28 @@ return function(client)
 		local author = message.author
 		local member = message.guild.members:get(message.author.id)
 		local args = content:split(" ")
+		local params = content:split(config.seperator)
 		local channel = message.channel
 
-        -- Command: Test
-        if args[1] == config.prefix.."test" then 
-            message:reply(languages[config.laguage]["commandTest"])
-        end
+		-- Command: Help
+		if args[1] == config.prefix..languages[config.language]["commands"]["commandHelp"] then 
+			message:reply(languages[config.language]["general"]["helpSent"])
+			author:send(languages[config.language]["commands"]["commandHelpMSG"])
+		end
+
+		-- Command: Formats
+		if args[1] == config.prefix..languages[config.language]["commands"]["commandFormats"] then 
+			message:reply(languages[config.language]["general"]["formatsSent"])
+			mbot.sendformats(author)
+		end
+
+		-- Command: Generate
+		if args[1] == config.prefix..languages[config.language]["commands"]["commandGenerate"] then 
+			if params[2] == nil then return end
+			if params[3] == nil then return end
+			if params[4] == nil then return end
+
+			mbot.generatememe(message, params[2], params[3], params[4])
+		end
     end)
 end
