@@ -32,7 +32,7 @@ return function(client)
 
             for _, v in pairs(results["data"]) do
                 for _, v in pairs(v) do
-                    if v.id == input then meme = tostring(v.id) break end
+                    if string.lower(v.id.." ") == input then meme = tostring(v.id) break end
                     if string.lower(v.name.." ") == input then meme = tostring(v.id) break end
                 end
             end
@@ -47,7 +47,7 @@ return function(client)
 
             for _, v in pairs(info) do
                 if v == nil then 
-                    message:reply(languages[config.language]["general"]["memeFail"])
+                    message:reply(languages[config.language]["general"]["memeFail"].." ("..k..")")
                     return 
                 end
             end

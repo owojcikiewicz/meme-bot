@@ -21,7 +21,7 @@ return function(client)
                 ["id"] = "ID:",
                 ["url"] = "Preview:"
             },
-            ["commandHelpMSG"] = "Hi, I was created for generating memes using pre-existing formats and the Imgflip API.\n\nIn order to get a full list of meme formats, please use the `"..config.prefix..config.commands[config.language]["commandFormats"].."` command.\nTo generate a meme, you will have to use the `"..config.prefix..config.commands[config.language]["commandGenerate"].."` command, usage: `"..config.prefix..config.commands[config.language]["commandGenerate"].." -format -toptext -bottomtext`."
+            ["commandHelpMSG"] = "Hi, I was created for generating memes using pre-existing formats and the Imgflip API.\n\nIn order to get a full list of meme formats, please use the `"..config.prefix..config.commands[config.language]["commandFormats"].."` command.\nTo generate a meme, you will have to use the `"..config.prefix..config.commands[config.language]["commandGenerate"].."` command, usage: `"..config.prefix..config.commands[config.language]["commandGenerate"].." "..config.seperator.."format "..config.seperator.."toptext "..config.seperator.."bottomtext`."
         }
     }
     
@@ -42,9 +42,7 @@ return function(client)
                 ["id"] = "ID:",
                 ["url"] = "Podgląd:"
             },
-            ["commandHelpMSG"] = "Cześć, powstałem w celu prostego tworzenia memów korzystając z popularnych szablonów, moją funkcjonalność czerpię z API Impflip.\n\nAby otrzymać listę wszystkich dostępnych szablonów, użyj komendy `"..config.prefix..config.commands[config.language]["commandFormats"].."`.\nAby stworzyć mema, należy użyć komendy `"..config.prefix..config.commands[config.language]["commandGenerate"].."`, użycie: `"..config.prefix..config.commands[config.language]["commandGenerate"].." -szablon -gornytekst -dolnytekst`."
+            ["commandHelpMSG"] = "Cześć, powstałem w celu prostego tworzenia memów korzystając z popularnych szablonów, moją funkcjonalność czerpię z API Impflip.\n\nAby otrzymać listę wszystkich dostępnych szablonów, użyj komendy `"..config.prefix..config.commands[config.language]["commandFormats"].."`.\nAby stworzyć mema, należy użyć komendy `"..config.prefix..config.commands[config.language]["commandGenerate"].."`, użycie: `"..config.prefix..config.commands[config.language]["commandGenerate"].." "..config.seperator.."szablon "..config.seperator.."gornytekst "..config.seperator.."dolnytekst`."
         }
     }
 end
-
---["commandHelp"] = "Hi, I was created for generating memes using pre-existing formats and the Imgflip API.\n\nIn order to get a full list of formats, please use the `"..config.prefix..""..languages[config.language]["commands"]["commandFormats"].."` command.\nTo generate a meme, you will have to use the `"..config.prefix..""..languages[config.language]["commands"]["commandGenerate"].."` command, usage: `"..config.prefix..""..languages[config.language]["commands"]["commandGenerate"].." -format -toptext -bottomtext`."

@@ -4,7 +4,9 @@
 
 --]]----------------------------------------------
 return function(client)
-    client:on("messageCreate", function(message)
+	local seperator = config.seperator
+	
+	    client:on("messageCreate", function(message)
         if message.guild == nil then return end 
 		if message.author.bot == true then return end
 
@@ -12,7 +14,7 @@ return function(client)
 		local author = message.author
 		local member = message.guild.members:get(message.author.id)
 		local args = content:split(" ")
-		local params = content:split("-")
+		local params = content:split(config.seperator)
 		local channel = message.channel
 
 		-- Command: Help

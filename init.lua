@@ -18,7 +18,8 @@ discordia.extensions()
 config.prefix = "."
 config.token = "NjYzMTAxNDQxNjk4OTU1MzEz.XhDnag.PF1i7zqN1TnHnj-diaOnFeONXKg"
 config.activity = "memowanko 👌 | "..config.prefix.."help"
-config.language = "pl"
+config.language = "en"
+config.seperator = ">"
 config.login = {
     username = "SaturdaysH_MEMEBOT",
     password = "__memebot__"
@@ -31,11 +32,10 @@ config.commands = {
     ["pl"] = {
         ["commandFormats"] = "szablony",
         ["commandGenerate"] = "generuj",
-    }
+    },
 }
 
 -- Lua modules.
-require("./modules/util")(client)
 require("./modules/language")(client)
 require("./modules/commands")(client)
 require("./modules/memegen")(client)
