@@ -9,5 +9,5 @@ MemeBot uses the [Discordia](https://github.com/SinisterRectus/Discordia) packag
 ![Usage](https://u.saturdaysheroes.xyz/img/6tXiU1dcbE.png)
 
 ## Credits
-- SaturdaysHeroes (Coding)
+- ImgFlip.com (API)
 - [SkipperBlyat](https://www.reddit.com/r/ProgrammerHumor/comments/ejvasw/big_brain_time/) (Inspiration)
