@@ -12,7 +12,7 @@ return function(client)
 
 		local content = message.content:lower()
 		local author = message.author
-		local member = message.guild.members:get(message.author.id)
+		local member = message.member
 		local args = content:split(" ")
 		local params = content:split(config.seperator)
 		local channel = message.channel
@@ -31,9 +31,7 @@ return function(client)
 
 		-- Command: Generate
 		if args[1] == config.prefix..languages[config.language]["commands"]["commandGenerate"] then 
-			if params[2] == nil then return end
-			if params[3] == nil then return end
-			if params[4] == nil then return end
+			if #params < 4 then return end
 
 			mbot.generatememe(message, params[2], params[3], params[4])
 		end
